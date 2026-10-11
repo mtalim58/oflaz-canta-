@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OFLAZ ÇANTA - Çanta ve elbise koleksiyonu">
+    <title>OFLAZ ÇANTA | Çanta & Elbise</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ÜST DUYURU -->
+    <div class="announcement">
+        Yeni sezon ürünlerinde özel fırsatlar ✨
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav">
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <a href="#" class="logo">
+                OFLAZ <span>ÇANTA</span>
+            </a>
+
+            <nav id="mainNav">
+                <a href="#anasayfa">Ana Sayfa</a>
+                <a href="#urunler">Ürünler</a>
+                <a href="#canta">Çantalar</a>
+                <a href="#elbise">Elbiseler</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#iletisim">İletişim</a>
+                <a href="auth.html">Giriş Yap / Üye Ol</a>
+                <a href="hesabim.html">Hesabım</a>
+
+            </nav>
+
+            <div class="nav-actions">
+                <button id="searchBtn" title="Ara">⌕</button>
+                <button id="cartBtn" title="Sepet">
+                    🛍️ <span id="cartCount">0</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ARAMA -->
+    <div class="search-box" id="searchBox">
+        <input type="text" id="searchInput" placeholder="Ürün ara...">
+        <button id="closeSearch">✕</button>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="anasayfa">
+        <div class="hero-content">
+            <p class="small-title">OFLAZ ÇANTA</p>
+
+            <h1>
+                Zarafetin<br>
+                <span>Yeni Hali</span>
+            </h1>
+
+            <p>
+                Stilini tamamlayan çanta ve elbise koleksiyonlarını keşfet.
+            </p>
+
+            <a href="#urunler" class="btn">Koleksiyonu Keşfet</a>
+        </div>
+    </section>
+
+    <!-- KATEGORİLER -->
+    <section class="categories">
+        <div class="container">
+
+            <div class="section-title">
+                <p>KOLEKSİYON</p>
+                <h2>Kategoriler</h2>
+            </div>
+
+            <div class="category-grid">
+
+                <a href="#urunler" class="category-card" data-category="canta">
+                    <div class="category-image bag-bg">
+                        <span>👜</span>
+                    </div>
+                    <h3>Çantalar</h3>
+                    <p>Şıklığını tamamla</p>
+                </a>
+
+                <a href="#urunler" class="category-card" data-category="elbise">
+                    <div class="category-image dress-bg">
+                        <span>👗</span>
+                    </div>
+                    <h3>Elbiseler</h3>
+                    <p>Tarzını yansıt</p>
+                </a>
+
+                <a href="#urunler" class="category-card" data-category="yeni">
+                    <div class="category-image new-bg">
+                        <span>✨</span>
+                    </div>
+                    <h3>Yeni Gelenler</h3>
+                    <p>Sezonun favorileri</p>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ÜRÜNLER -->
+    <section class="products-section" id="urunler">
+        <div class="container">
+
+            <div class="section-title">
+                <p>OFLAZ ÇANTA</p>
+                <h2>Öne Çıkan Ürünler</h2>
+            </div>
+
+            <!-- FİLTRELER -->
+            <div class="filters">
+                <button class="filter active" data-filter="all">Tümü</button>
+                <button class="filter" data-filter="canta">Çantalar</button>
+                <button class="filter" data-filter="elbise">Elbiseler</button>
+                <button class="filter" data-filter="yeni">Yeni Gelenler</button>
+            </div>
+
+            <div class="products" id="products">
+                <!-- Ürünler JavaScript tarafından oluşturulacak -->
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER -->
+    <section class="banner">
+        <div class="banner-content">
+            <p>OFLAZ ÇANTA</p>
+            <h2>Stil Seninle Başlar.</h2>
+            <a href="#urunler" class="btn light">Alışverişe Başla</a>
+        </div>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <section class="about" id="hakkimizda">
+        <div class="container about-grid">
+
+            <div>
+                <p class="small-title">BİZ KİMİZ?</p>
+                <h2>OFLAZ ÇANTA</h2>
+            </div>
+
+            <div>
+                <p>
+                    OFLAZ ÇANTA olarak modern tasarımları, zarif detayları
+                    ve günlük hayatın stilini bir araya getiriyoruz.
+                </p>
+
+                <p>
+                    Çanta ve elbise koleksiyonlarımızla her tarza uygun
+                    seçenekler sunmayı hedefliyoruz.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="iletisim">
+
+        <div class="container footer-grid">
+
+            <div>
+                <a href="#" class="logo footer-logo">
+                    OFLAZ <span>ÇANTA</span>
+                </a>
+
+                <p>
+                    Tarzını tamamlayan çanta ve elbise koleksiyonları.
+                </p>
+            </div>
+
+            <div>
+                <h4>Hızlı Menü</h4>
+                <a href="#anasayfa">Ana Sayfa</a>
+                <a href="#urunler">Ürünler</a>
+                <a href="#canta">Çantalar</a>
+                <a href="#elbise">Elbiseler</a>
+            </div>
+
+            <div>
+                <h4>İletişim</h4>
+                <p>📞 05XX XXX XX XX</p>
+                <p>📧 info@oflazcanta.com</p>
+                <p>📍 Türkiye</p>
+            </div>
+
+            <div>
+                <h4>Sosyal Medya</h4>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">TikTok</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 OFLAZ ÇANTA. Tüm hakları saklıdır.
+        </div>
+
+    </footer>
+
+    <!-- SEPET -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <aside class="cart" id="cart">
+
+        <div class="cart-header">
+            <h2>Sepetim</h2>
+            <button id="closeCart">✕</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Sepetiniz şu anda boş.</p>
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="total">
+                <span>Toplam</span>
+                <strong id="cartTotal">0 TL</strong>
+            </div>
+
+            <button class="checkout">Siparişi Tamamla</button>
+
+        </div>
+
+    </aside>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

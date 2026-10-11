@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesabım | OFLAZ ÇANTA</title>
+  <link rel="stylesheet" href="auth.css">
+  <script type="module" src="hesabim.js"></script>
+</head>
+
+<body>
+  <main class="auth-card account-card">
+    <a href="index.html" class="brand">OFLAZ <span>ÇANTA</span></a>
+
+    <p id="welcome" class="subtitle">Hesabın yükleniyor...</p>
+
+    <section>
+      <h1>Profilim</h1>
+      <p><strong>Ad soyad:</strong> <span id="profileName">—</span></p>
+      <p><strong>E-posta:</strong> <span id="profileEmail">—</span></p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h1>Siparişlerim</h1>
+      <div id="ordersList">Siparişler yükleniyor...</div>
+    </section>
+
+    <p id="accountMessage" role="status" aria-live="polite"></p>
+
+    <button id="logoutButton" class="submit" type="button">
+      Çıkış Yap
+    </button>
+
+    <a href="index.html" class="back-link">Alışverişe dön</a>
+  </main>
+</body>
+
+</html>

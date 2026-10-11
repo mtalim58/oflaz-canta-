@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Elegant Omuz Çantası",
+        "category": "canta",
+        "price": 1299,
+        "stock": 15,
+        "image": "images/canta1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Elegance Siyah Elbise",
+        "category": "elbise",
+        "price": 1799,
+        "stock": 12,
+        "image": "images/elbise1.jpg"
+    }
+]

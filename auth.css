@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background: #11100e;
+  color: #f8f4eb;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 34px;
+  background: #1c1a17;
+  border: 1px solid #4d412b;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px #0005;
+}
+
+.brand {
+  display: block;
+  text-align: center;
+  color: #d8b56d;
+  font-size: 28px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  color: #fff8eb;
+}
+
+.subtitle {
+  text-align: center;
+  color: #bcb5a9;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #494238;
+  border-radius: 8px;
+  background: transparent;
+  color: #eee5d6;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #d8b56d;
+  color: #17130c;
+  border-color: #d8b56d;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 23px;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 14px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #51483b;
+  border-radius: 8px;
+  background: #12110f;
+  color: white;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: 2px solid #d8b56d;
+  outline-offset: 1px;
+}
+
+small {
+  display: block;
+  margin-top: 8px;
+  color: #bcb5a9;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #d8b56d;
+  color: #17130c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.text-button,
+.back-link {
+  display: block;
+  margin: 18px auto 0;
+  border: 0;
+  background: transparent;
+  color: #e5c784;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#message {
+  min-height: 22px;
+  color: #f0ce86;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 420px) {
+  .auth-card {
+    padding: 24px 20px;
+  }
+}
+
+.account-card section {
+  margin: 24px 0;
+}
+
+.account-card section p {
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.account-card hr {
+  border: 0;
+  border-top: 1px solid #494238;
+}
+
+.order-item {
+  padding: 14px 0;
+  border-bottom: 1px solid #494238;
+  line-height: 1.6;
+}
+
+.order-status {
+  color: #e5c784;
+  font-weight: bold;
+}

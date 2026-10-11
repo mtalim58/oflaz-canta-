@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesabım | OFLAZ ÇANTA</title>
+  <link rel="stylesheet" href="auth.css">
+  <script type="module" src="auth.js"></script>
+</head>
+
+<body>
+  <main class="auth-card">
+    <a href="index.html" class="brand">OFLAZ <span>ÇANTA</span></a>
+    <p class="subtitle">Tarzını keşfet, hesabına giriş yap.</p>
+
+    <div class="tabs">
+      <button id="loginTab" class="active" type="button">Giriş Yap</button>
+      <button id="registerTab" type="button">Üye Ol</button>
+    </div>
+
+    <form id="loginForm">
+      <h1>Hoş geldin</h1>
+      <label for="loginEmail">E-posta</label>
+      <input id="loginEmail" type="email" autocomplete="email" placeholder="ornek@mail.com" required>
+
+      <label for="loginPassword">Şifre</label>
+      <input id="loginPassword" type="password" autocomplete="current-password" required>
+
+      <button class="submit" type="submit">Giriş Yap</button>
+      <button id="forgotPassword" class="text-button" type="button">
+        Şifremi unuttum
+      </button>
+    </form>
+
+    <form id="registerForm" hidden>
+      <h1>Hesap oluştur</h1>
+      <label for="fullName">Ad soyad</label>
+      <input id="fullName" type="text" autocomplete="name" maxlength="80" required>
+
+      <label for="registerEmail">E-posta</label>
+      <input id="registerEmail" type="email" autocomplete="email" placeholder="ornek@mail.com" required>
+
+      <label for="registerPassword">Şifre</label>
+      <input id="registerPassword" type="password" autocomplete="new-password" minlength="8" required>
+      <small>En az 8 karakter kullan.</small>
+
+      <button class="submit" type="submit">Üye Ol</button>
+    </form>
+
+    <p id="message" role="status" aria-live="polite"></p>
+    <a href="index.html" class="back-link">← Alışverişe dön</a>
+  </main>
+</body>
+
+</html>

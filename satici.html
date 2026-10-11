@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OFLAZ ÇANTA | Satıcı Paneli</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="satici.css">
+    <style>
+        body {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="panel">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                OFLAZ
+                <span>ÇANTA</span>
+            </div>
+
+            <nav>
+
+                <button class="menu-item active" data-page="dashboard">
+                    📊 Dashboard
+                </button>
+
+                <button class="menu-item" data-page="products">
+                    🛍️ Ürünler
+                </button>
+
+                <button class="menu-item" data-page="orders">
+                    📦 Siparişler
+                </button>
+
+                <button class="menu-item" data-page="addProduct">
+                    ➕ Ürün Ekle
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" target="_blank">
+                    🌐 Mağazayı Gör
+                </a>
+            </div>
+
+        </aside>
+
+
+        <!-- ANA ALAN -->
+        <main class="main">
+
+            <header class="topbar">
+
+                <div>
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p>OFLAZ ÇANTA satıcı paneli</p>
+                </div>
+
+                <button class="mobile-menu" id="mobileMenu">
+                    ☰
+                </button>
+
+            </header>
+
+
+            <!-- DASHBOARD -->
+            <section class="page active" id="dashboard">
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <span>💰</span>
+                        <div>
+                            <p>Toplam Satış</p>
+                            <h2 id="totalSales">0 TL</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>📦</span>
+                        <div>
+                            <p>Sipariş</p>
+                            <h2 id="totalOrders">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>🛍️</span>
+                        <div>
+                            <p>Ürün</p>
+                            <h2 id="totalProducts">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>📊</span>
+                        <div>
+                            <p>Stoktaki Ürün</p>
+                            <h2 id="totalStock">0</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="box">
+
+                        <div class="box-header">
+                            <h2>Son Siparişler</h2>
+
+                            <button onclick="showPage('orders')">
+                                Tümünü Gör
+                            </button>
+                        </div>
+
+                        <div id="recentOrders"></div>
+
+                    </div>
+
+
+                    <div class="box">
+
+                        <div class="box-header">
+                            <h2>Hızlı İşlemler</h2>
+                        </div>
+
+                        <button class="quick-button" onclick="showPage('addProduct')">
+                            ➕ Yeni Ürün Ekle
+                        </button>
+
+                        <button class="quick-button" onclick="showPage('products')">
+                            🛍️ Ürünleri Yönet
+                        </button>
+
+                        <button class="quick-button" onclick="showPage('orders')">
+                            📦 Siparişleri Gör
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ÜRÜNLER -->
+            <section class="page" id="products">
+
+                <div class="section-head">
+
+                    <div>
+                        <h2>Ürünler</h2>
+                        <p>Mağazandaki ürünleri yönet.</p>
+                    </div>
+
+                    <button class="primary" onclick="showPage('addProduct')">
+                        + Ürün Ekle
+                    </button>
+
+                </div>
+
+                <div class="search-area">
+
+                    <input type="text" id="productSearch" placeholder="Ürün ara...">
+
+                    <select id="categorySearch">
+
+                        <option value="all">Tüm Kategoriler</option>
+                        <option value="canta">Çanta</option>
+                        <option value="elbise">Elbise</option>
+
+                    </select>
+
+                </div>
+
+                <div class="product-table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Ürün</th>
+                                <th>Kategori</th>
+                                <th>Fiyat</th>
+                                <th>Stok</th>
+                                <th>Durum</th>
+                                <th>İşlem</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="productTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ÜRÜN EKLE -->
+            <section class="page" id="addProduct">
+
+                <div class="section-head">
+
+                    <div>
+                        <h2>Yeni Ürün Ekle</h2>
+                        <p>Mağazana yeni bir ürün ekle.</p>
+                    </div>
+
+                </div>
+
+
+                <form id="productForm" class="product-form">
+
+                    <div class="form-group">
+
+                        <label>Ürün Adı</label>
+
+                        <input type="text" id="productName" placeholder="Örn: Luxury El Çantası" required>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>Kategori</label>
+
+                            <select id="productCategory" required>
+
+                                <option value="">Kategori seç</option>
+                                <option value="canta">Çanta</option>
+                                <option value="elbise">Elbise</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Fiyat (TL)</label>
+
+                            <input type="number" id="productPrice" min="0" placeholder="1299" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>Stok</label>
+
+                            <input type="number" id="productStock" min="0" placeholder="10" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Ürün Etiketi</label>
+
+                            <select id="productBadge">
+
+                                <option value="">Etiket yok</option>
+                                <option value="YENİ">YENİ</option>
+                                <option value="ÇOK SATAN">ÇOK SATAN</option>
+                                <option value="İNDİRİM">İNDİRİM</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Ürün Açıklaması</label>
+
+                        <textarea id="productDescription" rows="5"
+                            placeholder="Ürün hakkında kısa açıklama..."></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Ürün Görseli</label>
+
+                        <input type="text" id="productImage" placeholder="images/canta1.jpg">
+
+                        <small>
+                            Örnek: images/canta1.jpg
+                        </small>
+
+                    </div>
+
+
+                    <button class="primary submit-button" type="submit">
+                        Ürünü Kaydet
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- SİPARİŞLER -->
+            <section class="page" id="orders">
+
+                <div class="section-head">
+
+                    <div>
+                        <h2>Siparişler</h2>
+                        <p>Gelen siparişleri yönet.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="orders-table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Sipariş No</th>
+                                <th>Müşteri</th>
+                                <th>Ürün</th>
+                                <th>Tutar</th>
+                                <th>Durum</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="ordersTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ÜRÜN DÜZENLEME MODALI -->
+
+    <div class="modal" id="editModal">
+
+        <div class="modal-content">
+
+            <button class="modal-close" onclick="closeEditModal()">
+                ✕
+            </button>
+
+            <h2>Ürünü Düzenle</h2>
+
+            <input type="hidden" id="editId">
+
+            <label>Ürün Adı</label>
+
+            <input type="text" id="editName">
+
+            <label>Fiyat</label>
+
+            <input type="number" id="editPrice">
+
+            <label>Stok</label>
+
+            <input type="number" id="editStock">
+
+            <button class="primary" onclick="saveEdit()">
+                Değişiklikleri Kaydet
+            </button>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="satici-kontrol.js"></script>
+    <script type="module" src="satici.js"></script>
+
+
+</body>
+
+</html>
